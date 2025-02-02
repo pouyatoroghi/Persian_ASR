@@ -11,6 +11,12 @@ model:
 
   labels: [" ", "ا", "ب", "پ", "ت", "ث", "ج", "چ", "ح", "خ", "د", "ذ", "ر", "ز", "ژ", "س", "ش", "ص", "ض", "ط", "ظ", "ع", "غ", "ف", "ق", "ک", "گ", "ل", "م", "ن", "و", "ه", "ی", "آ", "ء", "ئ", "أ", "ؤ", "ۀ", "‌", "،", "؛", "؟", "!", ".", ":", "-", "(", ")", "«", "»"]
 
+   # Add tokenizer configuration
+  tokenizer:
+    dir: null  # Directory to save/load the tokenizer (not needed for char-based tokenization)
+    type: "char"  # Use character-based tokenization
+    vocab: ${model.labels}  # Use the labels as the vocabulary
+
   model_defaults:
     enc_hidden: ${model.encoder.d_model}
     pred_hidden: 640
